@@ -4,7 +4,7 @@
         <livewire:chat.chat-list />
     </div>
     <div class="hidden md:grid w-full border-l h-full relative overflow-y-auto" style="contain:content">
-        <div class="font-medium text-lg">Start chatting
+        <div class="ml-10 font-medium text-lg"> Click on the user to Start chatting
             {{-- <livewire:chat.chat-box /> --}}
 
         </div>

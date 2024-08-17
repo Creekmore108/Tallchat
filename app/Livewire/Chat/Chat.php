@@ -4,6 +4,7 @@ namespace App\Livewire\Chat;
 
 use App\Models\Conversation;
 use Livewire\Component;
+use App\Models\Message;
 
 class Chat extends Component
 {
@@ -15,6 +16,11 @@ class Chat extends Component
         $this->selectedConversation=Conversation::findOrFail($this->query);
 
         // dd($this->selectedConversation);
+
+        Message::where('conversation_id',$this->selectedConversation->id)
+                ->where('receiver_id', auth()->id())
+                ->whereNull('read_at')
+                ->update(['read_at' => now()]);
     }
     public function render()
     {
